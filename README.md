@@ -26,7 +26,7 @@ SWAGGER_API_CURRENT_VERSION=1.0
 SWAGGER_API_ROOT=api
 
 #RUN WITH DOCKER
-docker compose --env-file .env up --build 
+docker compose  up --build 
 
 services:
   auth-service:
