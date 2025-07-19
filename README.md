@@ -13,7 +13,7 @@ The **Auth Service** handles user registration and login using JWT authenticatio
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/auth-service.git
+git clone https://github.com/Di-nobi/auth-service.git
 cd auth-service
 npm install
 
@@ -70,7 +70,7 @@ X-API-Key: 1234567812
 
 | Method | Endpoint       | Description         | Request Body                                | Response Body                                                                  |
 | ------ | -------------- | ------------------- | ------------------------------------------- | ------------------------------------------------------------------------------ |
-| POST   | /auth/register | Register a new user | { "email": "string", "password": "string" } | { "success": true, "message": "User registered", "data": { "token": "jwt" } }  |
+| POST   | /auth/register | Register a new user | { "email": "string", "password": "string" } | { "success": true, "message": "Registration Successful", "data": { "email": "udehdinobi@gmail.com", "id": "1234-34dse34-394929492dfg-weer44", "password": "<password>" } }  |
 | POST   | /auth/login    | Login a user        | { "email": "string", "password": "string" } | { "success": true, "message": "Login successful", "data": { "token": "jwt" } } |
 
 
