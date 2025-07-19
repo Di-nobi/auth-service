@@ -13,6 +13,31 @@ The **Auth Service** handles user registration and login using JWT authenticatio
 ### 1. Clone the Repository
 
 ```bash
+sudo apt-get update
+curl -s https://dl.cloudsmith.io/public/caddy/stable/gpg.key | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+
+Edit the caddy file:
+sudo nano /etc/apt/sources.list.d/caddy-stable.list
+
+Ensure this file reside within if not paste it:
+deb [signed-by=/usr/share/keyrings/caddy-stable-archive-keyring.gpg] https://dl.cloudsmith.io/public/caddy/stable/deb/debian any-version main
+
+sudo rm /etc/apt/sources.list.d/docker.list
+
+sudo rm /etc/apt/sources.list.d/stripe-cli-deb.list
+sudo apt-get update
+
+sudo apt-get install -y ca-certificates curl gnupg lsb-release
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu jammy stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt-get update
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+sudo apt-get install -y docker-compose-plugin
+docker compose version
+
 git clone https://github.com/Di-nobi/auth-service.git
 cd auth-service
 npm install
