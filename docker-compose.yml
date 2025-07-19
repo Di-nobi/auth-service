@@ -11,7 +11,7 @@ services:
     depends_on:
       - mongodb
     networks:
-      - auth-network
+      - shared-network
   mongodb:
     image: mongo:6
     ports:
@@ -19,9 +19,10 @@ services:
     volumes:
       - mongodb_data:/data/db
     networks:
-      - auth-network
+      - shared-network
 networks:
-  auth-network:
-    driver: bridge
+  shared-network:
+    name: shared-network
+    external: true
 volumes:
   mongodb_data:
