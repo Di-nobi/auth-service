@@ -74,6 +74,9 @@ X-API-Key: 1234567812
 | POST   | /auth/login    | Login a user        | { "email": "string", "password": "string" } | { "success": true, "message": "Login successful", "data": { "token": "jwt" } } |
 
 
+###Access Swagger at
+http://localhost:3001/api or http://localhost:3005/api  (Gateway)
+
 </details>
 
 ---
